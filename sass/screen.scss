@@ -1,0 +1,45 @@
+/* AUS Charity Website Project 2011
+ * Created by:
+ *		Parker Moore, http://www.parkermoore.de/
+ *		Matt C. Lepage, http://www.mclepage.com/
+ *		Mitchell Davis
+ */
+
+@import "compass/reset";
+
+// Variables
+$Crete-Round-Font-Stack: "Crete Round", "Arvo", Georgia, "Times New Roman", Times, serif;
+$Base-Font-Size: 14px;
+
+// General
+body {
+	font-family: $Crete-Round-Font-Stack;
+	font-size: $Base-Font-Size;
+	line-height: $Base-Font-Size * 1.62;
+	background-color: #f6f6f6;
+}
+
+// Layout
+#container {
+	width: 909px;
+	min-height: 400px;
+	margin: 0 auto;
+	background: image-url("background_texture.png") repeat-y;
+}
+
+#banner {
+	position: fixed;
+	background-color: #000;
+}
+
+#content {
+	
+}
+
+#bottom {
+	/* The bottom */
+	width: 922 px;
+	height: 100px;
+	margin: 0 auto;
+	background: image-url("background_bottom.png") no-repeat;
+}

@@ -1,7 +1,9 @@
 This site was created for the Arts Undergraduate Society of McGill University (Montréal, PQ, Canada) to promote and provide information for the AUS Charity event of 2012.
 
 Designer:
-	Eric Schreiber <eric@leacocks.com>
+	Eric Schreiber
 
 Developers:
-	Parker Moore <parker@leacocks.com>
+	Parker Moore, http://www.parkermoore.de/
+	Matt C. Lepage, http://www.mclepage.com/
+	Mitchell Davis

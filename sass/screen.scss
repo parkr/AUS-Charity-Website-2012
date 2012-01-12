@@ -1,11 +1,14 @@
 /* AUS Charity Website Project 2011
- * Created by:
+ * Designer:
+ *		Eric Schreiber
+ * Developers:
  *		Parker Moore, http://www.parkermoore.de/
  *		Matt C. Lepage, http://www.mclepage.com/
  *		Mitchell Davis
  */
 
 @import "compass/reset";
+@import "fonts/Crete_Round";
 
 // Variables
 $Crete-Round-Font-Stack: "Crete Round", "Arvo", Georgia, "Times New Roman", Times, serif;
@@ -14,9 +17,21 @@ $Base-Font-Size: 14px;
 // General
 body {
 	font-family: $Crete-Round-Font-Stack;
+	font-weight: lighter;
 	font-size: $Base-Font-Size;
 	line-height: $Base-Font-Size * 1.62;
 	background-color: #f6f6f6;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+	&:visited {
+		color: #f6f6f6;
+	}
 }
 
 // Layout
@@ -29,16 +44,39 @@ body {
 
 #banner {
 	position: fixed;
-	background-color: #000;
+	background-color: #ec0017;
+	height: 37px;
+	width: 910px;
+	padding: 14px 0px 0px 10px;
+	#logo {
+		width: 90px;
+		height: 100%;
+		float: left;
+		margin: 0px 20px 0px 0px;
+	}
+	#branding {
+		float: left;
+		color: white;
+		font-size: $Base-Font-Size * 2.8;
+		width: 300px;
+	}
+	nav {
+		float: left;
+		display: block;
+		width: 500px;
+		a {
+			font-size: $Base-Font-Size * 1.62;
+			margin-right: 10px;
+		}
+	}
 }
 
 #content {
-	
+	padding: 10px 20px;
 }
 
 #bottom {
-	/* The bottom */
-	width: 922 px;
+	width: 920px;
 	height: 100px;
 	margin: 0 auto;
 	background: image-url("background_bottom.png") no-repeat;

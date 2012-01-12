@@ -1,5 +1,7 @@
 /* AUS Charity Website Project 2011
- * Created by:
+ * Designer:
+ *		Eric Schreiber
+ * Developers:
  *		Parker Moore, http://www.parkermoore.de/
  *		Matt C. Lepage, http://www.mclepage.com/
  *		Mitchell Davis
@@ -51,11 +53,32 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
+@font-face {
+  font-family: 'Crete Round';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Crete Round Italic"), local("CreteRound-Italic"), url("http://themes.googleusercontent.com/static/fonts/creteround/v2/5xAt7XK2vkUdjhGtt98unYo3ZslTYfJv0R05CazkwN8.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Crete Round';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Crete Round"), local("CreteRound-Regular"), url("http://themes.googleusercontent.com/static/fonts/creteround/v2/ZCcPJiCGOzh84o2siPk48brIa-7acMAeDBVuclsi6Gc.woff") format("woff"); }
+
 body {
   font-family: "Crete Round", "Arvo", Georgia, "Times New Roman", Times, serif;
+  font-weight: lighter;
   font-size: 14px;
   line-height: 22.68px;
   background-color: #f6f6f6; }
+
+a {
+  color: white;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+  a:visited {
+    color: #f6f6f6; }
 
 #container {
   width: 909px;
@@ -63,9 +86,35 @@ body {
   margin: 0 auto;
   background: url('../images/background_texture.png?1326079376') repeat-y; }
 
+#banner {
+  position: fixed;
+  background-color: #ec0017;
+  height: 37px;
+  width: 910px;
+  padding: 14px 0px 0px 10px; }
+  #banner #logo {
+    width: 90px;
+    height: 100%;
+    float: left;
+    margin: 0px 20px 0px 0px; }
+  #banner #branding {
+    float: left;
+    color: white;
+    font-size: 39.2px;
+    width: 300px; }
+  #banner nav {
+    float: left;
+    display: block;
+    width: 500px; }
+    #banner nav a {
+      font-size: 22.68px;
+      margin-right: 10px; }
+
+#content {
+  padding: 10px 20px; }
+
 #bottom {
-  /* The bottom */
-  width: 922px;
+  width: 920px;
   height: 100px;
   margin: 0 auto;
   background: url('../images/background_bottom.png?1326079132') no-repeat; }

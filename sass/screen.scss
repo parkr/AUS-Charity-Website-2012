@@ -6,6 +6,8 @@
  *		Matt C. Lepage, http://www.mclepage.com/
  *		Mitchell Davis
  */
+ 
+@import "compass/css3";
 
 @import "compass/reset";
 @import "fonts/Crete_Round";
@@ -13,6 +15,7 @@
 // Variables
 $Crete-Round-Font-Stack: "Crete Round", "Arvo", Georgia, "Times New Roman", Times, serif;
 $Base-Font-Size: 14px;
+$Banner-Colour: #ec0017;
 
 // General
 body {
@@ -44,10 +47,31 @@ a {
 
 #banner {
 	position: fixed;
-	background-color: #ec0017;
+	background-color: $Banner-Colour;
 	height: 37px;
 	width: 910px;
 	padding: 14px 0px 0px 10px;
+	@include single-box-shadow(rgba(0,0,0,0.55), 0px, 0px, 4px);
+	z-index: 100; /* stack order: foreground */
+	margin-left: -7px;
+	&:before {
+		/*height: 0px;
+		width: 0px;
+		border-style: solid;
+		position: fixed;
+		border-width: 15px;
+		z-index: 80;
+		border-color: transparent $Banner-Colour transparent transparent;
+		margin-left: -30px;
+		top: 0px;*/
+		content: "";
+		position: absolute;
+		left: -10px;
+		bottom: -9px;
+		z-index: 1;
+		border: 10px solid transparent;
+		border-right-color: $Banner-Colour;
+	}
 	#logo {
 		width: 90px;
 		height: 100%;
@@ -71,8 +95,32 @@ a {
 	}
 }
 
+// Specialized elements
+#drawing {
+	width: 900px;
+	height: 369px;
+	background: image-url('bannerdrawing.jpg');
+	margin-left: 4px;
+}
+#buffer {
+	width: 100%;
+	height: 50px;
+}
+
 #content {
 	padding: 10px 20px;
+	color: #048629;
+	@for $i from	1 through 6 {
+		h#{$i} {
+			font-size: $Base-Font-Size * (7-$i) ;
+			line-height: $Base-Font-Size * (7-$i) * 1.62;
+		}
+	}
+	h1, h2, h3, h4, h5, h6 {
+		// Add styling
+		color: darken(#7b7869, 20%);
+		@include text-shadow(#fff 1px 1px 0);
+	}
 }
 
 #bottom {

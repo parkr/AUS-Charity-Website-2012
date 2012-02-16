@@ -120,12 +120,15 @@ a {
     width: 90px;
     height: 100%;
     float: left;
-    margin: 0px 20px 0px 0px; }
+    margin: -7px 0px 0px 20px;
+    background-image: url('../images/auslogo.png?1329424074');
+    background-repeat: no-repeat; }
   #banner #branding {
     float: left;
     color: white;
     font-size: 39.2px;
-    width: 300px; }
+    width: 300px;
+    height: 100%; }
   #banner nav {
     float: left;
     display: block;

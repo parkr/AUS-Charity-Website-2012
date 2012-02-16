@@ -76,13 +76,16 @@ a {
 		width: 90px;
 		height: 100%;
 		float: left;
-		margin: 0px 20px 0px 0px;
+		margin: -7px 0px 0px 20px;
+		background-image: image-url("auslogo.png");
+		background-repeat: no-repeat;
 	}
 	#branding {
 		float: left;
 		color: white;
 		font-size: $Base-Font-Size * 2.8;
 		width: 300px;
+		height: 100%;
 	}
 	nav {
 		float: left;

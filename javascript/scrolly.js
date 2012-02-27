@@ -30,20 +30,9 @@ window.onscroll = function(e) {
 	}
 }
 
-/*window.onhashchange = function(){
-	if(this.location.hash != "#top" || this.location.hash != "#contact"){
-		var times = 0, max = 20;
-		var slowScroll = null;
-		slowScroll = setInterval(function(){
-			if(times <= max){
-				window.scrollTo(0, window.pageYOffset - 1);
-				times++;
-			}else{
-				clearInterval(slowScroll);
-			}
-		}, 7);
-	}
-}*/
+window.onhashchange = function(){
+	_gaq.push(['_trackPageview', window.location.pathname + window.location.hash ]);
+}
 
 document.onreadystatechange = function(){
 	return;

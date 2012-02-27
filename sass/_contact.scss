@@ -1,5 +1,35 @@
 #contactPage {
-	font-size: $Base-Font-Size*2;
-	line-height: $Base-Font-Size*1.68*2;
+	font-size: $Base-Font-Size*1.5;
+	line-height: $Base-Font-Size*1.68*1.5;
 	margin: 0em 2em;
+	&:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	
+}
+
+#general_inquiries {
+	width: 47%;
+	margin-right: 5%;
+	float: left;
+}
+
+#charity_week_coordinators {
+	width: 45%;
+	float: left;
+	font-size: 16px;
+	line-height: 16px*1.68;
+	p {
+		margin-bottom: 10px;
+		strong {
+			font-style: bold;
+		}
+		em {
+			font-style: italic;
+		}
+	}
 }

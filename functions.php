@@ -14,5 +14,12 @@ function linkify($text){
 	$ret = preg_replace('/([a-z0-9][-a-z0-9._]*[a-z0-9]*\@[a-z0-9][-a-z0-9_]+[a-z0-9]*\.[a-z0-9][-a-z0-9_-][a-z0-9]+)/i', '<a href="mailto:\\1">\\1</a>', $ret);
 	return $ret;
 }
+
+function tag($tag, $content){
+	if($content == null){
+		return "<$tag />";
+	}
+	return "<$tag>$content</$tag>";
+}
 	
 ?>

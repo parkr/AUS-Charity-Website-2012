@@ -142,23 +142,23 @@ a {
   padding: 10px 20px;
   color: #048629; }
   #content h1 {
-    font-size: 84px;
-    line-height: 136.08px; }
+    font-size: 74.2px;
+    line-height: 120.204px; }
   #content h2 {
-    font-size: 70px;
-    line-height: 113.4px; }
+    font-size: 60.2px;
+    line-height: 97.524px; }
   #content h3 {
-    font-size: 56px;
-    line-height: 90.72px; }
+    font-size: 46.2px;
+    line-height: 74.844px; }
   #content h4 {
-    font-size: 42px;
-    line-height: 68.04px; }
+    font-size: 32.2px;
+    line-height: 52.164px; }
   #content h5 {
-    font-size: 28px;
-    line-height: 45.36px; }
+    font-size: 18.2px;
+    line-height: 29.484px; }
   #content h6 {
-    font-size: 14px;
-    line-height: 22.68px; }
+    font-size: 4.2px;
+    line-height: 6.804px; }
   #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
     color: #44423a;
     text-shadow: white 1px 1px 0; }
@@ -172,8 +172,8 @@ a {
   background: url('../images/background_bottom.png?1326079132') no-repeat; }
 
 #aboutPage {
-  font-size: 28px;
-  line-height: 47.04px;
+  font-size: 16px;
+  line-height: 26.88px;
   margin: 0em 2em; }
 
 #eventsList {
@@ -224,6 +224,29 @@ a {
     text-shadow: black 1px 1px 0; }
 
 #contactPage {
-  font-size: 28px;
-  line-height: 47.04px;
+  font-size: 21px;
+  line-height: 35.28px;
   margin: 0em 2em; }
+  #contactPage:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
+#general_inquiries {
+  width: 47%;
+  margin-right: 5%;
+  float: left; }
+
+#charity_week_coordinators {
+  width: 45%;
+  float: left;
+  font-size: 16px;
+  line-height: 26.88px; }
+  #charity_week_coordinators p {
+    margin-bottom: 10px; }
+    #charity_week_coordinators p strong {
+      font-style: bold; }
+    #charity_week_coordinators p em {
+      font-style: italic; }

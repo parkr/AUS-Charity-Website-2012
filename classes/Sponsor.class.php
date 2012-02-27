@@ -41,7 +41,7 @@ class Sponsor {
 		$ret = array();
 		if($objs){
 			foreach($objs as $obj){
-				$ret[] = new Event($obj['id']);
+				$ret[] = new Sponsor($obj['id']);
 			}
 		}
 		return $ret;

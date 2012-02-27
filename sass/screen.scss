@@ -108,8 +108,8 @@ a {
 	color: #048629;
 	@for $i from	1 through 6 {
 		h#{$i} {
-			font-size: $Base-Font-Size * (7-$i) ;
-			line-height: $Base-Font-Size * (7-$i) * 1.62;
+			font-size: $Base-Font-Size * (6.3-$i) ;
+			line-height: $Base-Font-Size * (6.3-$i) * 1.62;
 		}
 	}
 	h1, h2, h3, h4, h5, h6 {

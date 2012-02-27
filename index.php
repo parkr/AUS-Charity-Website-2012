@@ -71,14 +71,14 @@ require_once(dirname(__FILE__)."/functions.php");
 							<div id="<?php echo $event->name; ?>" class="name"><?php echo $event->name; ?></div>
 							<div class="datetime">
 								<?php echo date("l, F d, Y", strtotime($event->datetime)); ?>
+							</div>
+							<div id="location">
 								<?php
 									if($event->location != ""){
-										echo "in ".htmlentities($event->location);
+										echo htmlentities($event->location);
 									}	
 								?>
 							</div>
-						</div>
-						<div class="details">
 							<div class="cost">
 								<?php
 									if($event->cost != ""){
@@ -89,6 +89,7 @@ require_once(dirname(__FILE__)."/functions.php");
 							<div class="description">
 								<?php echo nl2br($event->description); ?>
 							</div>
+							
 						</div>
 					</div>
 					
@@ -110,10 +111,23 @@ require_once(dirname(__FILE__)."/functions.php");
 			
 			<h1 id="contact" class="main_item">Contact</h1>
 			<div id="contactPage">
-				<?php
-					$contactPage = new Page("Contact");
-					echo nl2br(linkify($contactPage->content));
-				?>
+				<div id="general_inquiries">
+					<?php
+						$page = new Page("General Inquiries");
+						echo nl2br(linkify(htmlentities($page->content)));
+					?>
+				</div>
+				<div id="charity_week_coordinators">
+					<?php
+						$page = new Page("Charity Week Coordinators");
+						$page->content = str_replace("\r\n", "\n\n", $page->content);
+						$people = explode("\n\n", $page->content);
+						foreach($people as $personn):
+							$p = explode("\n", $personn);
+							echo tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1]));
+						endforeach;
+					?>
+				</div>
 			</div>
 		</div>
 	</div>

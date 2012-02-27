@@ -1,0 +1,10 @@
+#sponsorsList {
+	font-size: $Base-Font-Size*2.5;
+	line-height: $Base-Font-Size*1.68*2.5;
+	margin: 0em 2em;
+	list-style-type: disc;
+	.sponsor a {
+		color: darken(white, 2%);
+		@include text-shadow(#000 1px 1px 0);
+	}
+}

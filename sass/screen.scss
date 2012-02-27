@@ -1,10 +1,8 @@
-/* AUS Charity Website Project 2011
+/* AUS Charity Website Project 2012
  * Designer:
  *		Eric Schreiber
- * Developers:
+ * Developer:
  *		Parker Moore, http://www.parkermoore.de/
- *		Matt C. Lepage, http://www.mclepage.com/
- *		Mitchell Davis
  */
  
 @import "compass/css3";
@@ -87,6 +85,9 @@ a {
 			font-size: $Base-Font-Size * 1.62;
 			margin-right: 10px;
 		}
+		.active {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -116,6 +117,9 @@ a {
 		color: darken(#7b7869, 20%);
 		@include text-shadow(#fff 1px 1px 0);
 	}
+	.main_item {
+		padding-top: 22px;
+	}
 }
 
 #bottom {
@@ -125,4 +129,7 @@ a {
 	background: image-url("background_bottom.png") no-repeat;
 }
 
+@import "about";
 @import "events";
+@import "sponsors";
+@import "contact";

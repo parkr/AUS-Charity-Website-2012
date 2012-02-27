@@ -122,9 +122,10 @@ require_once(dirname(__FILE__)."/functions.php");
 						$page = new Page("Charity Week Coordinators");
 						$page->content = str_replace("\r\n", "\n\n", $page->content);
 						$people = explode("\n\n", $page->content);
+						print_r($people);
 						foreach($people as $personn):
 							$p = explode("\n", $personn);
-							echo tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1]));
+							echo tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1]) );
 						endforeach;
 					?>
 				</div>

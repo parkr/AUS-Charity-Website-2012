@@ -72,7 +72,8 @@ body {
 
 a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+  text-shadow: #999999 1px 1px 0; }
   a:hover {
     text-decoration: underline; }
   a:visited {
@@ -181,7 +182,8 @@ a {
 
 .event {
   margin-top: 10px;
-  padding-top: 5px; }
+  padding-top: 5px;
+  font-size: 20px; }
   .event:after {
     content: ".";
     display: block;
@@ -204,15 +206,10 @@ a {
     color: #44423a;
     text-shadow: white 1px 1px 0; }
   .event div.datetime {
-    margin-top: 10px;
-    font-size: 20px; }
+    margin-top: 10px; }
   .event div.details {
     float: left;
     width: 300px; }
-  .event div.cost {
-    font-size: 20px; }
-    .event div.cost:before {
-      content: "Cost: $"; }
 
 #sponsorsList {
   font-size: 35px;

@@ -27,6 +27,7 @@ body {
 a {
 	color: white;
 	text-decoration: none;
+	@include text-shadow(#999 1px 1px 0);
 	&:hover {
 		text-decoration: underline;
 	}

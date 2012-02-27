@@ -97,18 +97,8 @@ a {
   -o-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
   z-index: 100;
-  /* stack order: foreground */
   margin-left: -7px; }
   #banner:before {
-    /*height: 0px;
-    width: 0px;
-    border-style: solid;
-    position: fixed;
-    border-width: 15px;
-    z-index: 80;
-    border-color: transparent $Banner-Colour transparent transparent;
-    margin-left: -30px;
-    top: 0px;*/
     content: "";
     position: absolute;
     left: -10px;
@@ -128,7 +118,8 @@ a {
     color: white;
     font-size: 39.2px;
     width: 300px;
-    height: 100%; }
+    height: 100%;
+    text-align: center; }
   #banner nav {
     float: left;
     display: block;

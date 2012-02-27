@@ -35,7 +35,7 @@ require_once(dirname(__FILE__)."/functions.php");
 			<div id="logo"></div>
 			<div id="branding"><a href="#top">Charity Week</a></div>
 			<nav>
-				<a href="#top" id="top_nav">Home</a>
+				<a href="#welcome" id="welcome_nav">Welcome</a>
 				<a href="#about" id="about_nav">About</a>
 				<a href="#events" id="events_nav">Events</a>
 				<a href="#sponsors" id="sponsors_nav">Sponsors</a>
@@ -45,6 +45,16 @@ require_once(dirname(__FILE__)."/functions.php");
 		<div id="buffer"></div>
 		<div id="drawing"></div>
 		<div id="content">
+			<h1 id="welcome" class="main_item">Welcome</h1>
+			<div id="welcomePage">
+				<?php
+					
+					$welcomePage = new Page("Welcome");
+					echo nl2br($welcomePage->content);
+					
+				?>
+			</div>
+			
 			<h1 id="about" class="main_item">About</h1>
 			<div id="aboutPage">
 				<?php
@@ -64,7 +74,7 @@ require_once(dirname(__FILE__)."/functions.php");
 				?>
 			
 					<div class="event">
-						<div class="poster">
+						<div class="poster" id="<?php echo str_replace('.jpg', '', basename($event->poster)); ?>">
 							<img src="<?php echo HTML::link($event->poster); ?>">
 						</div>
 						<div class="info">
@@ -88,6 +98,20 @@ require_once(dirname(__FILE__)."/functions.php");
 							</div>
 							<div class="description">
 								<?php echo nl2br(linkify($event->description)); ?>
+							</div>
+							<div class="sponsored_by">
+								<?php 
+									/*$sponsors = Sponsor::getSponsorsOfEvent($event->id);
+									if($sponsors){
+										echo "Sponsored by ";
+										foreach($sponsors as $sponsor){
+											if($sponsor->name != ""){
+												$list .= ($sponsor->name.","); 
+											}
+										}
+										echo substr($list, 0, strlen($list)-1);
+									}*/
+								?>
 							</div>
 							
 						</div>
@@ -120,9 +144,9 @@ require_once(dirname(__FILE__)."/functions.php");
 				<div id="charity_week_coordinators">
 					<?php
 						$page = new Page("Charity Week Coordinators");
-						$page->content = str_replace("\r\n", "\n\n", $page->content);
+						$page->content = str_replace("\r\n", "\n", $page->content);
 						$people = explode("\n\n", $page->content);
-						print_r($people);
+						
 						foreach($people as $personn):
 							$p = explode("\n", $personn);
 							echo tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1]) );

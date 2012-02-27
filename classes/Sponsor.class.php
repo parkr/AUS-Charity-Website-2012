@@ -45,6 +45,20 @@ class Sponsor {
 		return $ret;
 	}
 	
+	public static function getSponsorsOfEvent($event_id, $order = "name ASC"){
+		// returns array of Event objects.
+		$db = new DB();
+		$getManyQuery = "SELECT id FROM ".Sponsor::$useTable." WHERE event_id = $event_id ORDER BY ".$order;
+		$objs = $db->execute($getManyQuery);
+		$ret = array();
+		if($objs){
+			foreach($objs as $obj){
+				$ret[] = new Sponsor($obj['id']);
+			}
+		}
+		return $ret;
+	}
+	
 }
 	
 ?>

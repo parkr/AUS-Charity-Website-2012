@@ -15,7 +15,7 @@ Object.prototype.keys = function (){
 }
 
 window.onscroll = function(e) {
-	var offset = 0;//window.innerHeight / 1.6;
+	var offset = 50;//window.innerHeight / 1.6;
 	var keys = sections.keys();
 	for(var i=keys.length; i >= 0; i--){
 		if(window.pageYOffset + offset > sections[keys[i]]){

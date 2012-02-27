@@ -1,6 +1,6 @@
 sections = {
-	"top": 0,
-	"welcome": 0,
+	"home": 0,
+	"welcome": 300,
 	"about": 429,
 	"events": 681,
 	"sponsors": 1214,
@@ -25,7 +25,7 @@ window.onscroll = function(e) {
 				active_els[k].className = null;
 			}
 			document.getElementById(keys[i]+"_nav").className = "active";
-			console && console.log && console.log("YEP for", keys[i], window.pageYOffset, sections[keys[i]]);
+			//console && console.log && console.log("YEP for", keys[i], window.pageYOffset, sections[keys[i]]);
 			return;
 		}
 	}
@@ -41,8 +41,8 @@ document.onreadystatechange = function(){
 			var keys = sections.keys();
 			for(var i=0; i < keys.length; i++)
 				sections[keys[i]] = document.getElementById(keys[i]).offsetTop;
-			sections["top"] = 200;
-			document.getElementById("top_nav").className = "active";
+			sections["home"] = 0;
+			window.onscroll();
 		}, 700);
 	}
 }

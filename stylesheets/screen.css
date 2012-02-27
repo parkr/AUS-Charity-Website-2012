@@ -234,6 +234,9 @@ strong {
     width: 300px; }
   .event div.description {
     margin-top: 10px; }
+  .event div.sponsored_by {
+    font-size: 80%;
+    margin-top: 15px; }
 
 /* Posters. Need set heights... ugh */
 #CoffeehAUS.poster {
@@ -287,6 +290,7 @@ strong {
   #charity_week_coordinators p {
     margin-bottom: 10px; }
     #charity_week_coordinators p strong {
-      font-weight: bold; }
+      font-weight: bold;
+      letter-spacing: 1.5px; }
     #charity_week_coordinators p em {
       font-style: italic; }

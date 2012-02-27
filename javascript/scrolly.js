@@ -1,9 +1,9 @@
 sections = {
-	"home": 0,
-	"about": 0,
-	"events": 0,
-	"sponsors": 0,
-	"contact": 0
+	"top": 0,
+	"about": 429,
+	"events": 681,
+	"sponsors": 1214,
+	"contact": 1430
 }
 
 Object.prototype.keys = function (){
@@ -15,7 +15,7 @@ Object.prototype.keys = function (){
 }
 
 window.onscroll = function(e) {
-	var offset = window.innerHeight / 1.6;
+	var offset = 0;//window.innerHeight / 1.6;
 	var keys = sections.keys();
 	for(var i=keys.length; i >= 0; i--){
 		if(window.pageYOffset + offset > sections[keys[i]]){
@@ -30,10 +30,28 @@ window.onscroll = function(e) {
 	}
 }
 
+/*window.onhashchange = function(){
+	if(this.location.hash != "#top" || this.location.hash != "#contact"){
+		var times = 0, max = 20;
+		var slowScroll = null;
+		slowScroll = setInterval(function(){
+			if(times <= max){
+				window.scrollTo(0, window.pageYOffset - 1);
+				times++;
+			}else{
+				clearInterval(slowScroll);
+			}
+		}, 7);
+	}
+}*/
+
 document.onreadystatechange = function(){
+	return;
 	if(this.readyState === "complete"){
 		var keys = sections.keys();
 		for(var i=0; i < keys.length; i++)
 			sections[keys[i]] = document.getElementById(keys[i]).offsetTop;
+		sections["top"] = 200;
+		document.getElementById("top_nav").className = "active";
 	}
 }

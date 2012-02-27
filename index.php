@@ -33,7 +33,7 @@ require_once(dirname(__FILE__)."/functions.php");
 		<div id="top"></div>
 		<div id="banner">
 			<div id="logo"></div>
-			<div id="branding"><a href="#top">Charity Week</a></div>
+			<div id="branding"><a href="#top" id="home_nav">Charity Week</a></div>
 			<nav>
 				<a href="#welcome" id="welcome_nav">Welcome</a>
 				<a href="#about" id="about_nav">About</a>
@@ -43,6 +43,7 @@ require_once(dirname(__FILE__)."/functions.php");
 			</nav>
 		</div>
 		<div id="buffer"></div>
+		<div id="home"></div>
 		<div id="drawing"></div>
 		<div id="content">
 			<h1 id="welcome" class="main_item">Welcome</h1>
@@ -60,7 +61,7 @@ require_once(dirname(__FILE__)."/functions.php");
 				<?php
 					
 					$aboutPage = new Page("About");
-					echo nl2br(linkify($aboutPage->content));
+					echo nl2br(($aboutPage->content));
 					
 				?>
 			</div>
@@ -97,20 +98,20 @@ require_once(dirname(__FILE__)."/functions.php");
 								?>
 							</div>
 							<div class="description">
-								<?php echo nl2br(linkify($event->description)); ?>
+								<?php echo nl2br(($event->description)); ?>
 							</div>
 							<div class="sponsored_by">
 								<?php 
-									/*$sponsors = Sponsor::getSponsorsOfEvent($event->id);
+									$sponsors = Sponsor::getSponsorsOfEvent($event->id);
 									if($sponsors){
 										echo "Sponsored by ";
 										foreach($sponsors as $sponsor){
 											if($sponsor->name != ""){
-												$list .= ($sponsor->name.","); 
+												$list .= ($sponsor->name.", "); 
 											}
 										}
-										echo substr($list, 0, strlen($list)-1);
-									}*/
+										echo substr($list, 0, strlen($list)-2);
+									}
 								?>
 							</div>
 							
@@ -149,7 +150,7 @@ require_once(dirname(__FILE__)."/functions.php");
 						
 						foreach($people as $personn):
 							$p = explode("\n", $personn);
-							echo linkify(tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1]) ));
+							echo linkify(tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1])));
 						endforeach;
 					?>
 				</div>

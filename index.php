@@ -87,7 +87,7 @@ require_once(dirname(__FILE__)."/functions.php");
 								?>
 							</div>
 							<div class="description">
-								<?php echo nl2br($event->description); ?>
+								<?php echo nl2br(linkify($event->description)); ?>
 							</div>
 							
 						</div>

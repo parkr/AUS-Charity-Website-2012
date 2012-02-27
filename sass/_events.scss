@@ -1,0 +1,49 @@
+#eventsList {
+	margin-left: 2em;
+}
+.event {
+	margin-top: 10px;
+	padding-top: 5px;
+	&:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	div.info {
+		float: left;
+		width: 400px;
+	}
+	div.poster {
+		float: left;
+		width: 100px;
+		height: 100px;
+		overflow: auto;
+		* { margin: auto; }
+	}
+	div.name {
+		font-size: 45px;
+		line-height: 33px;
+		color: darken(#7b7869, 20%);
+		@include text-shadow(#fff 1px 1px 0);
+	}
+	div.datetime {
+		margin-top: 10px;
+		font-size: 20px;
+	}
+	div.details {
+		float: left;
+		width: 300px;
+	}
+	div.cost {
+		font-size: 20px;
+		
+		&:before {
+			content: "Cost: $";
+		}
+	}
+	div.description {
+		
+	}
+}

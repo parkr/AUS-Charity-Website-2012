@@ -20,7 +20,7 @@ class Event {
 		if(array_key_exists($key, $this->data)){
 			return $this->data[$key];
 		}else{
-			trigger_error("Array key '$key' does not exist for Events.");
+			trigger_error("Array key '$key' does not exist for Event.");
 			return "Array key '$key' does not exists for Event.";
 		}
 	}

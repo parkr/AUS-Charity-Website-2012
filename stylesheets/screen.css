@@ -168,3 +168,41 @@ a {
   height: 100px;
   margin: 0 auto;
   background: url('../images/background_bottom.png?1326079132') no-repeat; }
+
+#eventsList {
+  margin-left: 2em; }
+
+.event {
+  margin-top: 10px;
+  padding-top: 5px; }
+  .event:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .event div.info {
+    float: left;
+    width: 400px; }
+  .event div.poster {
+    float: left;
+    width: 100px;
+    height: 100px;
+    overflow: auto; }
+    .event div.poster * {
+      margin: auto; }
+  .event div.name {
+    font-size: 45px;
+    line-height: 33px;
+    color: #44423a;
+    text-shadow: white 1px 1px 0; }
+  .event div.datetime {
+    margin-top: 10px;
+    font-size: 20px; }
+  .event div.details {
+    float: left;
+    width: 300px; }
+  .event div.cost {
+    font-size: 20px; }
+    .event div.cost:before {
+      content: "Cost: $"; }

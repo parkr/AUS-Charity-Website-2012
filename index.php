@@ -47,19 +47,44 @@ require_once(dirname(__FILE__)."/functions.php");
 			<h1 id="home">Home</h1>
 			<h1 id="about">About</h1>
 			<h1 id="events">Events</h1>
-			<?php
+			<div id="eventsList">
+				<?php
 				
-				$events = Event::getAll();
-				foreach($events as $event): 
-			?>
+					$events = Event::getAll();
+					foreach($events as $event): 
+				?>
 			
-				<div class="event">
-					<img src="<?php echo HTML::link($event->poster); ?>" id="poster">
-					<h3 id="<?php echo $event->name; ?>"><?php echo $event->name; ?></h3>
-					<h4><?php echo date("l, F d, Y", strtotime($event->datetime)); ?></h4>
-				</div>
+					<div class="event">
+						<div class="poster">
+							<img src="<?php echo HTML::link($event->poster); ?>">
+						</div>
+						<div class="info">
+							<div id="<?php echo $event->name; ?>" class="name"><?php echo $event->name; ?></div>
+							<div class="datetime">
+								<?php echo date("l, F d, Y", strtotime($event->datetime)); ?>
+								<?php
+									if($event->location != ""){
+										echo "in ".htmlentities($event->location);
+									}	
+								?>
+							</div>
+						</div>
+						<div class="details">
+							<div class="cost">
+								<?php
+									if($event->cost != ""){
+										echo $event->cost;
+									}
+								?>
+							</div>
+							<div class="description">
+								<?php echo nl2br($event->description); ?>
+							</div>
+						</div>
+					</div>
 					
-			<?php endforeach; ?>
+				<?php endforeach; ?>
+			</div>
 			<h1 id="sponsors">Sponsors</h1>
 			<h1 id="contact">Contact</h1>
 		</div>

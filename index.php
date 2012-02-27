@@ -50,7 +50,7 @@ require_once(dirname(__FILE__)."/functions.php");
 				<?php
 					
 					$welcomePage = new Page("Welcome");
-					echo nl2br($welcomePage->content);
+					echo nl2br(linkify($welcomePage->content));
 					
 				?>
 			</div>
@@ -60,7 +60,7 @@ require_once(dirname(__FILE__)."/functions.php");
 				<?php
 					
 					$aboutPage = new Page("About");
-					echo nl2br($aboutPage->content);
+					echo nl2br(linkify($aboutPage->content));
 					
 				?>
 			</div>
@@ -149,7 +149,7 @@ require_once(dirname(__FILE__)."/functions.php");
 						
 						foreach($people as $personn):
 							$p = explode("\n", $personn);
-							echo tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1]) );
+							echo linkify(tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1]) ));
 						endforeach;
 					?>
 				</div>

@@ -1,5 +1,6 @@
 sections = {
 	"top": 0,
+	"welcome": 0,
 	"about": 429,
 	"events": 681,
 	"sponsors": 1214,

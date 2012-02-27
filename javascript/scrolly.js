@@ -35,12 +35,13 @@ window.onhashchange = function(){
 }
 
 document.onreadystatechange = function(){
-	return;
 	if(this.readyState === "complete"){
-		var keys = sections.keys();
-		for(var i=0; i < keys.length; i++)
-			sections[keys[i]] = document.getElementById(keys[i]).offsetTop;
-		sections["top"] = 200;
-		document.getElementById("top_nav").className = "active";
+		setTimeout(function(){
+			var keys = sections.keys();
+			for(var i=0; i < keys.length; i++)
+				sections[keys[i]] = document.getElementById(keys[i]).offsetTop;
+			sections["top"] = 200;
+			document.getElementById("top_nav").className = "active";
+		}, 700);
 	}
 }

@@ -4,6 +4,7 @@ class Sponsor {
 	
 	public $displayField = 'name';
 	public static $useTable = 'sponsors';
+	public static $joinTable = 'events_sponsors';
 	public $db = null;
 	private $data = array();
 	
@@ -48,12 +49,12 @@ class Sponsor {
 	public static function getSponsorsOfEvent($event_id, $order = "name ASC"){
 		// returns array of Event objects.
 		$db = new DB();
-		$getManyQuery = "SELECT id FROM ".Sponsor::$useTable." WHERE event_id = $event_id ORDER BY ".$order;
+		$getManyQuery = "SELECT sponsor_id FROM ".Sponsor::$joinTable." WHERE event_id = $event_id";
 		$objs = $db->execute($getManyQuery);
 		$ret = array();
 		if($objs){
 			foreach($objs as $obj){
-				$ret[] = new Sponsor($obj['id']);
+				$ret[] = new Sponsor($obj['sponsor_id']);
 			}
 		}
 		return $ret;

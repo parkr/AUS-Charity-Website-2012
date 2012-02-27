@@ -4,6 +4,7 @@ class Event {
 	
 	public $displayField = 'name';
 	public static $useTable = 'events';
+	public static $joinTable = 'events_sponsors';
 	public $db = null;
 	private $data;
 	

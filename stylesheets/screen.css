@@ -79,11 +79,21 @@ a {
   a:visited {
     color: #f6f6f6; }
 
+em {
+  font-style: italic; }
+
+strong {
+  font-weight: bold; }
+
 #container {
   width: 909px;
   min-height: 400px;
   margin: 0 auto;
-  background: url('../images/background_texture.png?1326079376') repeat-y; }
+  background: transparent url('../images/background_texture.png?1326079376') repeat-y;
+  -moz-box-shadow: -10px -10px 10px #cccccc;
+  -webkit-box-shadow: -10px -10px 10px #cccccc;
+  -o-box-shadow: -10px -10px 10px #cccccc;
+  box-shadow: -10px -10px 10px #cccccc; }
 
 #banner {
   position: fixed;
@@ -172,13 +182,18 @@ a {
   margin: 0 auto;
   background: url('../images/background_bottom.png?1326079132') no-repeat; }
 
+#welcomePage {
+  font-size: 16px;
+  line-height: 26.88px;
+  margin: 0em 2em; }
+
 #aboutPage {
   font-size: 16px;
   line-height: 26.88px;
   margin: 0em 2em; }
 
 #eventsList {
-  margin-left: 2em; }
+  margin: 2em 1em; }
 
 .event {
   margin-top: 10px;
@@ -192,12 +207,19 @@ a {
     visibility: hidden; }
   .event div.info {
     float: left;
-    width: 400px; }
+    width: 380px;
+    margin-left: 20px; }
   .event div.poster {
     float: left;
-    width: 100px;
-    height: 100px;
-    overflow: auto; }
+    width: 440px;
+    max-height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0 -3px 0;
+    -moz-box-shadow: 0px 0px 5px black;
+    -webkit-box-shadow: 0px 0px 5px black;
+    -o-box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 5px black; }
     .event div.poster * {
       margin: auto; }
   .event div.name {
@@ -210,6 +232,24 @@ a {
   .event div.details {
     float: left;
     width: 300px; }
+  .event div.description {
+    margin-top: 10px; }
+
+/* Posters. Need set heights... ugh */
+#CoffeehAUS.poster {
+  height: 295px; }
+
+#Krispy-Kreme-Samosas-Cupcakes.poster {
+  height: 298px; }
+
+#Charity-Concert.poster {
+  height: 289px; }
+
+#Silent-Auction.poster {
+  height: 286px; }
+
+#Tokyo.poster {
+  height: 330px; }
 
 #sponsorsList {
   font-size: 35px;

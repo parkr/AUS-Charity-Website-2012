@@ -1,5 +1,5 @@
 #eventsList {
-	margin-left: 2em;
+	margin: 2em 1em;
 }
 .event {
 	margin-top: 10px;
@@ -14,13 +14,17 @@
 	}
 	div.info {
 		float: left;
-		width: 400px;
+		width: 380px;
+		margin-left: 20px;
 	}
 	div.poster {
 		float: left;
-		width: 100px;
-		height: 100px;
-		overflow: auto;
+		width: 440px;
+		max-height: 100%;
+		overflow: hidden;
+		margin: 0;
+		padding: 0 0 -3px 0;
+		@include single-box-shadow(#000);
 		* { margin: auto; }
 	}
 	div.name {
@@ -41,6 +45,26 @@
 		
 	}
 	div.description {
+		margin-top: 10px;
+	}
+	div.sponsored_by {
 		
 	}
+}
+
+/* Posters. Need set heights... ugh */
+#CoffeehAUS.poster {
+	height: 295px;
+}
+#Krispy-Kreme-Samosas-Cupcakes.poster {
+	height: 298px;
+}
+#Charity-Concert.poster {
+	height: 289px;
+}
+#Silent-Auction.poster {
+	height: 286px;
+}
+#Tokyo.poster {
+	height: 330px;
 }

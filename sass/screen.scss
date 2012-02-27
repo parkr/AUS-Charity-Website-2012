@@ -35,13 +35,20 @@ a {
 		color: #f6f6f6;
 	}
 }
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}
 
 // Layout
 #container {
 	width: 909px;
 	min-height: 400px;
 	margin: 0 auto;
-	background: image-url("background_texture.png") repeat-y;
+	background: transparent image-url("background_texture.png") repeat-y;
+	@include single-box-shadow(#ccc, -10px, -10px , 10px);
 }
 
 #banner {
@@ -130,6 +137,7 @@ a {
 	background: image-url("background_bottom.png") no-repeat;
 }
 
+@import "welcome";
 @import "about";
 @import "events";
 @import "sponsors";

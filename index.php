@@ -30,11 +30,12 @@ require_once(dirname(__FILE__)."/functions.php");
 </head>
 <body>
 	<div id="container">
+		<div id="top"></div>
 		<div id="banner">
 			<div id="logo"></div>
 			<div id="branding"><a href="#top">Charity Week</a></div>
 			<nav>
-				<a href="#home" id="home_nav">Home</a>
+				<a href="#top" id="top_nav">Home</a>
 				<a href="#about" id="about_nav">About</a>
 				<a href="#events" id="events_nav">Events</a>
 				<a href="#sponsors" id="sponsors_nav">Sponsors</a>
@@ -44,9 +45,17 @@ require_once(dirname(__FILE__)."/functions.php");
 		<div id="buffer"></div>
 		<div id="drawing"></div>
 		<div id="content">
-			<h1 id="home">Home</h1>
-			<h1 id="about">About</h1>
-			<h1 id="events">Events</h1>
+			<h1 id="about" class="main_item">About</h1>
+			<div id="aboutPage">
+				<?php
+					
+					$aboutPage = new Page("About");
+					echo nl2br($aboutPage->content);
+					
+				?>
+			</div>
+			
+			<h1 id="events" class="main_item">Events</h1>
 			<div id="eventsList">
 				<?php
 				
@@ -85,8 +94,27 @@ require_once(dirname(__FILE__)."/functions.php");
 					
 				<?php endforeach; ?>
 			</div>
-			<h1 id="sponsors">Sponsors</h1>
-			<h1 id="contact">Contact</h1>
+			
+			<h1 id="sponsors" class="main_item">Sponsors</h1>
+			<ul id="sponsorsList">
+				<?php
+					$sponsors = Sponsor::getAll();
+					foreach($sponsors as $sponsor): 
+				?>
+				<li class="sponsor">
+					<a href="<?php echo $sponsor->website; ?>" title="<?php echo $sponsor->name; ?>" target="_blank"><?php echo htmlentities($sponsor->name); ?></a>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+			
+			
+			<h1 id="contact" class="main_item">Contact</h1>
+			<div id="contactPage">
+				<?php
+					$contactPage = new Page("Contact");
+					echo nl2br(linkify($contactPage->content));
+				?>
+			</div>
 		</div>
 	</div>
 	<div id="bottom">

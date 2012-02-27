@@ -36,7 +36,7 @@ class DB {
 			}
 			return $return;
 		}else{
-			trigger_error("No results from query '$query'.");
+			//trigger_error("No results from query '$query'.");
 			return null;
 		}
 	}

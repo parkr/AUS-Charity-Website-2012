@@ -12,7 +12,7 @@ class HTML {
 			case 'localhost':
 				return "http://localhost/AUSCharity".$relative;
 			default: 
-				return $_SERVER['HTTP_HOST'].$relative;
+				return "http://".$_SERVER['HTTP_HOST'].$relative;
 		}
 	}
 }

@@ -5,7 +5,7 @@ class Sponsor {
 	public $displayField = 'name';
 	public static $useTable = 'sponsors';
 	public $db = null;
-	private $data;
+	private $data = array();
 	
 	function __construct($id){
 		require_once("DB.class.php");
@@ -17,12 +17,10 @@ class Sponsor {
 	}
 	
 	public function __get($key){
-		if(array_key_exists($key, $this->data)){
+		if($this->data && array_key_exists($key, $this->data)){
 			return $this->data[$key];
-		}else{
-			trigger_error("Array key '$key' does not exist for Sponsor.");
-			return "Array key '$key' does not exists for Sponsor.";
 		}
+		return "";
 	}
 	
 	public function __set($key, $value){

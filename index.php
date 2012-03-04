@@ -128,7 +128,23 @@ require_once(dirname(__FILE__)."/functions.php");
 					foreach($sponsors as $sponsor): 
 				?>
 				<li class="sponsor">
-					<a href="<?php echo $sponsor->website; ?>" title="<?php echo $sponsor->name; ?>" target="_blank"><?php echo htmlentities($sponsor->name); ?></a>
+					<?php
+					if(strtolower($sponsor->name) == "sos tutoring"){
+						echo sprintf('<a href="%1$s" title="%2$s" target="_blank"><img src="%3$s" alt="%2$s" height="%4$d" width="%5$d">',
+							$sponsor->website,
+							$sponsor->name,
+							"sponsors/SOSTutoring-small.jpg",
+							100,
+							((100*400)/253)
+						);
+					}else{
+						echo sprintf('<a href="%s" title="%s" target="_blank">%s</a>',
+						$sponsor->website,
+						$sponsor->name,
+						htmlentities($sponsor->name)
+						);
+					}
+					?>
 				</li>
 				<?php endforeach; ?>
 			</ul>
@@ -149,6 +165,7 @@ require_once(dirname(__FILE__)."/functions.php");
 						$people = explode("\n\n", $page->content);
 						
 						foreach($people as $personn):
+							if(strpos($personn, "----") !== false){ echo tag("p", $personn); continue; }
 							$p = explode("\n", $personn);
 							echo linkify(tag("p", tag("strong", $p[0])."<br>".tag("em", $p[1])));
 						endforeach;
